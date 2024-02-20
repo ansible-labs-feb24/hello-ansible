@@ -1,6 +1,6 @@
 ---
 - name: Hello, Ansible Playbook
-  hosts: all
+  hosts: debians
   become: true
   tasks:
     - name: Example from Ansible Playbook
