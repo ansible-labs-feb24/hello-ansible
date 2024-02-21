@@ -1,0 +1,7 @@
+---
+- name: Desplegar aplicacion
+  ansible.builtin.unarchive:
+    src: "{{ artifact }}"
+    dest: /var/www/html/
+    owner: root
+    group: root
