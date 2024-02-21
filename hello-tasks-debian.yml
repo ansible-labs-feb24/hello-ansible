@@ -1,0 +1,31 @@
+---
+- name: Example from Ansible Playbook
+  ansible.builtin.ping:
+- name: Show gateway
+  ansible.builtin.debug:
+    msg: "{{ ansible_default_ipv4.gateway }}"
+- name: Install apache
+  ansible.builtin.apt:
+    name: apache2
+    update_cache: true
+- name: Start apache
+  ansible.builtin.service:
+    name: apache2
+    state: started
+    enabled: true
+- name: Install mariadb
+  ansible.builtin.apt:
+    name: mariadb-server
+- name: Uninstall htop
+  ansible.builtin.apt:
+    name: htop
+    state: absent
+- name: Install unzip
+  ansible.builtin.apt:
+    name: unzip
+- name: Desplegar aplicacion
+  ansible.builtin.unarchive:
+    src: /home/tux/Downloads/2048.zip
+    dest: /var/www/html/
+    owner: root
+    group: root

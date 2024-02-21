@@ -11,6 +11,7 @@
     - name: Install apache
       ansible.builtin.apt:
         name: apache2
+        update_cache: true
     - name: Start apache
       ansible.builtin.service:
         name: apache2
@@ -23,6 +24,9 @@
       ansible.builtin.apt:
         name: htop
         state: absent
+    - name: Install unzip
+      ansible.builtin.apt:
+        name: unzip
     - name: Desplegar aplicacion
       ansible.builtin.unarchive:
         src: /home/tux/Downloads/2048.zip
